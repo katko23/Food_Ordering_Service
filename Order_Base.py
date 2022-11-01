@@ -4,6 +4,7 @@ orders_lock = threading.Lock()
 order_id = 0
 orders = []
 received_orders = []
+sended_orders = []
 
 def orders_pop(index):
     with orders_lock:
