@@ -29,9 +29,10 @@ class Server(Thread):
             # Order_Base.received_orders.append(1)
             Order_Base.orders_lock.release()
             serverLock.release()
-            time.sleep(100)
-            print("Append raw orders to the queue")
-            dictToReturn = {'answer': "FO Service received the order"}
+            # time.sleep(100)
+            # print("Append raw orders to the queue")
+            while(len(Order_Base.sended_orders) < 2) : time.sleep(10)
+            dictToReturn ={'orders_id':Order_Base.order_id,'orders':[Order_Base.sended_orders.pop(0), Order_Base.sended_orders.pop(0)]}
             return jsonify(dictToReturn)
 
         @app.route('/register', methods=['POST'])
@@ -50,6 +51,7 @@ class Server(Thread):
             Menu_Base.menu_lock.release()
             serverLock.release()
             print("Get all the menus")
+
             dictToReturn = {"Received": "FO Service received the menu from Restaurant"}
             return jsonify(dictToReturn)
 

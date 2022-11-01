@@ -1,4 +1,5 @@
 import OrderSenderCheck, FoodOrderingServer, time
+import MenuSender
 
 if __name__ == "__main__":
 
@@ -8,8 +9,8 @@ if __name__ == "__main__":
     orderSender = OrderSenderCheck.OSender()
     orderSender.start()
 
+
     while(True):
-        time.sleep(20)
-        import MenuSender
+        # time.sleep(20)
         MenuSender.menus()
 

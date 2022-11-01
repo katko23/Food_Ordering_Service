@@ -5,7 +5,7 @@ serverName =  "localhost"
 this_serverPort = 27001
 
 
-
+#
 # hostName = "clientservice-c"
 # serverPort = 27002
 #
@@ -13,3 +13,4 @@ this_serverPort = 27001
 # this_serverPort = 27001
 
 restaurnats_address = []
+timeUnit = 0.1
